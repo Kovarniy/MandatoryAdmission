@@ -28,7 +28,7 @@ namespace MandatoryAdmission
 
     class Authorization
     {
-        private static string pathToUsersFile = @"C:\Users\mn\source\repos\MandatoryAdmission\MandatoryAdmission\users.txt";
+        private static string pathToUsersFile = @"..\..\..\users.txt";
 
         private static string getHashMd5(string text)
         {
@@ -78,17 +78,28 @@ namespace MandatoryAdmission
             return new Profile();
         }
 
-        public static Profile login()
+        public static void login()
         {
-            Console.Write("Name: ");
-            string name = Console.ReadLine();
-            Console.Write("Password: ");
-            string pass = Console.ReadLine();
+            Console.WriteLine("Command 'exit' for exit in programm");
+            bool exit;
+            Profile userProfile;
 
-            string hashPass = getHashMd5(pass);
-            //Console.WriteLine(hashPass);
+            do
+            {
+                Console.Write("Name: ");
+                string name = Console.ReadLine();
+                if (CommandInterpreter.isExit(name)) return;
 
-            return auth(name, hashPass);
+                Console.Write("Password: ");
+                string pass = Console.ReadLine();
+                if (CommandInterpreter.isExit(name)) return;
+
+                string hashPass = getHashMd5(pass);
+                userProfile = auth(name, hashPass);
+            } while (userProfile.accessLevel < 0);
+
+            CommandInterpreter commandInterpreter = new(userProfile);
+            commandInterpreter.WriteCommand();
         }
     }
 }

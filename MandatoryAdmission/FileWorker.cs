@@ -11,7 +11,7 @@ namespace MandatoryAdmission
     class FileWorker
     {
         
-        private static string pathToFles = @"C:\Users\mn\source\repos\MandatoryAdmission\MandatoryAdmission\files.txt";
+        private static string pathToFles = @"..\..\..\files.txt";
 
         private FileInfo fileInfo = new (pathToFles);
 
@@ -33,6 +33,7 @@ namespace MandatoryAdmission
 
             return true;
         }
+
 
         public bool CanChangeFile(int fileAccessLvl)
         {

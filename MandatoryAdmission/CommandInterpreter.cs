@@ -17,13 +17,12 @@ namespace MandatoryAdmission
             Console.WriteLine("Delete file - delete filename");
             Console.WriteLine("Change file - change filename newtext");
             Console.WriteLine("Read file - read filename");
-            Console.WriteLine("Exit - exit");
         }
 
         public static string[] SplitComand(string commandLine)
-        {
-            return commandLine.Split(" ", StringSplitOptions.RemoveEmptyEntries);
-        }
+        => commandLine.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+
+        public static bool isExit(string command) => command == "exit" ? true : false;
 
         private bool isValidCommand(string commandLine)
         {
@@ -55,6 +54,7 @@ namespace MandatoryAdmission
             {
                 command = Console.ReadLine();
                 command.Trim();
+                if (isExit(command)) return;
                 validateResult = isValidCommand(command);
             } while (!validateResult);
 

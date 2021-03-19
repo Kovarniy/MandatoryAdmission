@@ -1,5 +1,6 @@
 filename text access
-file1 Very_secret_text 2
+file1 Not_vary_secret_text 2
 file2 Not_very_secret_text 1
 file3 Just_text 0
 test hell 2
+simple.exe 101011 1
