@@ -1,0 +1,4 @@
+uname hashpass access_level
+admin c31ac65793f58b386cfb53f1b9775 2
+user1 5fa285e1bebea6623e33afc4a1fbd5 1
+user2 f37584c99e7fd4f4f8c59550f8f57 0
