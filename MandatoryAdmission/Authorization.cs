@@ -28,7 +28,7 @@ namespace MandatoryAdmission
 
     class Authorization
     {
-        private static string pathToUsersFile = @"C:\Users\mn\source\repos\MandatoryAdmission\MandatoryAdmission\users.txt";
+        private static string pathToUsersFile = @"..\..\..\users.txt";
 
         private static string getHashMd5(string text)
         {
